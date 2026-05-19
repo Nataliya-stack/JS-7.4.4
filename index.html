@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>>
+  <style>
+    body {             
+      background-image: url("./img/bggg.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      background-attachment: fixed;
+      width: 100%; 
+      margin: 0 auto;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center; 
+      overflow-x: hidden;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;      
+      padding: 0 15px; 
+      box-sizing: border-box;
+    }
+      
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 0;
+      width: 100%;
+    }
+    
+    .block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;           
+    }
+
+    button {
+      border: 2px solid #a3004c;
+      padding: 10px 15px;
+      width: 100%; 
+      max-width: 320px; 
+      cursor: pointer;
+      background-color: #fde0e4;
+      color: #a3004c;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background-color 0.2s;
+    }
+
+    button:hover {
+      background-color: #fbc4cb;
+    }
+
+    .respuesta {
+      display: none;
+    }
+
+    .cloud-box {
+      width: 100%;
+      max-width: 500px;
+      min-height: 300px; 
+      background: #fff;
+      border: 5px solid #ff69b4;
+      border-radius: 40px; 
+      margin: 40px auto 20px auto; 
+      padding: 25px;
+      box-sizing: border-box;
+      position: relative;
+    }
+
+    .cloud-box::after {
+      content: '';
+      position: absolute;
+      background: #fff;
+      border: 5px solid #ff69b4;
+      border-bottom: none; 
+      width: 60px;
+      height: 60px;
+      top: -32px;
+      left: 30px;
+      border-radius: 50%;
+    }
+
+    .cloud-box::before {
+      content: '';
+      position: absolute;
+      background: #fff;
+      border: 5px solid #ff69b4;
+      border-bottom: none;
+      width: 90px;
+      height: 90px;
+      top: -48px;
+      right: 30px;
+      border-radius: 50%;
+    }
+
+    @media (min-width: 768px) {
+      body {
+        width: 80%; 
+      }
+
+      .container {
+        flex-direction: row; 
+        justify-content: center; 
+        gap: 50px; 
+        margin-top: 0;
+      }
+
+      .block {
+        width: auto; 
+        align-items: flex-start;
+      }
+
+      button {
+        width: 280px; 
+        max-width: none;
+        padding: 8px 15px;
+      }
+
+      .cloud-box {
+        width: 500px;
+        height: 500px;
+        border-radius: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; 
+        margin: 90px 0 0 0; 
+        padding: 60px 40px 40px 40px;
+      }
+
+      .cloud-box::after {
+        width: 100px;
+        height: 100px;
+        top: -50px;
+        left: 40px;
+      }
+
+      .cloud-box::before {
+        width: 150px;
+        height: 150px;
+        top: -90px;
+        right: 40px;
+      }
+    }
+  </style>  
+  <link rel="shortcut icon" href="shopping-cart.svg" type="image/svg">
+  <title>JS - 7.4</title>
+</head>
+
+<body>  
+      <h1 class="font-bold text-4xl md:text-6xl my-8 md:my-12 text-center text-pink-800">TAREAS</h1>       
+  
+      <div class="flex flex-col md:flex-row justify-center items-center gap-3 md:gap-6 mb-6 text-xl md:text-2xl w-full text-center">
+        <label for="input" class="text-pink-900 font-medium">Escribe tu tarea aqui:</label>
+        <input type="text" id="input" class="border-amber-950 border-2 rounded-lg px-4 py-1 w-full max-w-[320px] md:max-w-[400px] bg-white text-gray-800" placeholder="Ejemplo: Estudiar JS">
+      </div>
+      
+
+    <div class="container" id="menu">
+      <div id="tareas-list" class="cloud-box">
+        <ul start="0" id="lista-compras" class="list-decimal pl-8 text-xl text-gray-700 font-medium w-full text-left"></ol>
+      </div>
+  
+      <div class="block gap-3">
+        <button onclick="anadTareas()">ANADIR TAREA</button>
+        <button onclick="mosTareas()">MOSTRAR TODAS LAS TAREAS</button>
+        <button onclick="elimTareas()">ELIMINAR TAREA</button>
+        <button onclick="salDeApp()">SALIR DE LA APLICACION</button>
+      </div>
+    </div>
+    
+    <div id="mensaje" class="respuesta">Gracias</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="./js/app.js"></script>
+</body>
+</html>
